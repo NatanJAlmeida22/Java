@@ -1,0 +1,1 @@
+Repositório destinado para estudos da Linguagem Java
