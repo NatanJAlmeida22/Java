@@ -19,7 +19,7 @@ public class ContaBanco {
         System.out.println("Tipo: " + this.getTipo());
         System.out.println("Dono: " + this.getDono());
         System.out.println("Saldo: " + this.getSaldo());
-        System.out.println("Status: " + this.status);
+        System.out.println("Status: " + this.isStatus());
     }
    
     public void abrirConta(String tipo) {
@@ -35,9 +35,35 @@ public class ContaBanco {
     
     public void fecharConta() {
         if (this.getSaldo() < 0) {
-            System.out.println("Fechamento não realizado. Conta negativada!!!");
+            JOptionPane.showMessageDialog(null, "Fechamento da conta de " + this.getDono() +  " não realizado. Conta negativada");
         } else if (this.getSaldo() > 0) {
-            JOptionPane.showMessageDialog(null, "Fechamento não realizado. Dinheiro em Conta");
+            JOptionPane.showMessageDialog(null, "Fechamento da conta de " + this.getDono() + " não realizado. Dinheiro em Conta");
+        } else {
+            this.setStatus(false);
+            JOptionPane.showMessageDialog(null, "Fechamento da conta de " + this.getDono() + " realizado com sucesso");
+        }
+    }
+    
+    public void depositar(float deposito) {
+        this.setSaldo(this.getSaldo() + deposito);
+        JOptionPane.showMessageDialog(null, "Depósito de R$ " + deposito + " realizado na conta de " + this.getDono() + " com sucesso");
+    }
+    
+    public void sacar(float saque) {
+        if (saque <= this.getSaldo()){
+          this.setSaldo(this.getSaldo() - saque);
+          JOptionPane.showMessageDialog(null, "Saque de R$ " + saque + " realizado na conta de " + this.getDono() + " com sucesso");
+        } else {
+            JOptionPane.showMessageDialog(null, "Saldo infuciente para saque");
+        }
+        
+    }
+    
+    public void pagarMensal() {
+        if (this.getTipo() == "CC") {
+            this.setSaldo(this.getSaldo() - 12);
+        } else if (this.getTipo() == "CP") {
+            this.setSaldo(this.getSaldo() - 20);
         }
     }
 
