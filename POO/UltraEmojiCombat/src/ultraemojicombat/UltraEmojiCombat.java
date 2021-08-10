@@ -15,6 +15,12 @@ public class UltraEmojiCombat {
                            1.70f, 119.3f);
         l[5] = new Lutador("Nerdaard", "EUA", 30, 12, 2, 4, 
                            1.81f, 105.7f);
+        
+        Luta UEC01 = new Luta();
+        UEC01.marcarLuta(l[0], l[1]);
+        UEC01.lutar();
+        l[0].status();
+        l[1].status();
     }
     
 }
