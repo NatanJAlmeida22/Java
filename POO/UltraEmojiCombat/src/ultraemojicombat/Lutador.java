@@ -46,7 +46,7 @@ public class Lutador {
         this.derrotas = derrotas;
         this.empates = empates;
         this.altura = altura;
-        this.peso = peso;
+        this.setPeso(peso);
     }
 
     public String getNome() {
