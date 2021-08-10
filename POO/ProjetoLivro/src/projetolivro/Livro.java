@@ -1,16 +1,30 @@
 package projetolivro;
-public class Livro {
-    private String livro, autor;
+public class Livro implements Publicacao{
+    private String titulo, autor;
     private int totPaginas, pagAtual;
     private boolean aberto;
     private Pessoa leitor;
 
-    public String getLivro() {
-        return livro;
+    public String toString() {
+        return "Livro{" + "titulo=" + titulo + ", autor=" 
+                + autor + ", totPaginas=" + totPaginas
+                + ", pagAtual=" + pagAtual + ", aberto=" 
+                + aberto + ", leitor=" + leitor + '}';
     }
 
-    public void setLivro(String livro) {
-        this.livro = livro;
+    public Livro(String titulo, String autor, int totPaginas, Pessoa leitor) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.totPaginas = totPaginas;
+        this.leitor = leitor;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getAutor() {
@@ -52,8 +66,30 @@ public class Livro {
     public void setLeitor(Pessoa leitor) {
         this.leitor = leitor;
     }
-    
-    public void detallhes(){
-        
+
+    @Override
+    public void abrir() {
+        this.setAberto(true);
     }
+
+    @Override
+    public void fechar() {
+        this.setAberto(false);
+    }
+
+    @Override
+    public void folhear(int p) {
+        this.setPagAtual(p);
+    }
+
+    @Override
+    public void avancarPag() {
+        this.setPagAtual(this.getPagAtual() + 1);
+    }
+
+    @Override
+    public void voltarPag() {
+        this.setPagAtual(this.getPagAtual() + 1);
+    }
+    
 }
