@@ -1,5 +1,5 @@
 package projetopessoas;
-public abstract class Pessoa {
+public class Pessoa {
     private String nome;
     private int idade;
     private String sexo;
@@ -30,6 +30,11 @@ public abstract class Pessoa {
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" + "nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + '}';
     }
     
     

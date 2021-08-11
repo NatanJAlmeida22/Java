@@ -4,7 +4,7 @@ public class Funcionario extends Pessoa{
     private boolean trabalhando;
     
     public void mudarTrabalhao(){
-        
+        this.setTrabalhando(!this.isTrabalhando());
     }
 
     public String getSetor() {
