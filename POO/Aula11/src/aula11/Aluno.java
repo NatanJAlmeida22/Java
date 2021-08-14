@@ -20,6 +20,6 @@ public class Aluno extends Pessoa{
     }
     
     public void pagarMensal(){
-        System.out.println("Mensalidade paga");
+        System.out.println("Mensalidade de " + this.getNome() + " paga");
     }
 }

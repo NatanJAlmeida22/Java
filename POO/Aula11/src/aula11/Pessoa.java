@@ -29,5 +29,10 @@ public abstract class Pessoa {
     
     public final void fazerAniv(){
         this.setIdade(this.getIdade() + 1);
+    }
+
+    @Override
+    public String toString() {
+        return "Dados{" + "nome=" + nome + ", sexo=" + sexo + ", idade=" + idade + '}';
     } 
 }
